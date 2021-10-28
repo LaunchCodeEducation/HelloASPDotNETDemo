@@ -31,5 +31,6 @@ namespace CodingEvents.Controllers
             return Redirect("/Events");
 
         }
+
     }
 }
