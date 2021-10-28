@@ -12,11 +12,24 @@ namespace CodingEvents.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            Events.Add("Code the Kasbah");
-            Events.Add("Bringing Coding Back");
-            Events.Add("Bohemian Codesody");
             ViewBag.events = Events;
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("/Events/Add")]
+        public IActionResult NewEvent(string name)
+        {
+            Events.Add(name);
+
+            return Redirect("/Events");
+
         }
     }
 }
